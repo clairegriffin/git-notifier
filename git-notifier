@@ -170,7 +170,7 @@ class GitConfig:
         if self.maxage:
             now = time.time()
             self.maxage *= (24 * 60 * 60) # Days to secs.
-            self.maxage = int(now) - self.maxage
+            self.maxage = int(now) - int(self.maxage)
 
         if self.allchanges and not isinstance(self.allchanges, set):
             self.allchanges = set([head.strip() for head in self.allchanges.split(",")])
